@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "java",
+			"targetPath": "E:\\Minecraft Project\\Server\\plugins\\${workspaceFolderBasename}.jar",
+			"elements": [
+				"${compileOutput}",
+				"${dependencies}"
+			],
+			"problemMatcher": [],
+			"label": "java: exportjar:mconsnow",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

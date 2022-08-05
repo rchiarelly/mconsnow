@@ -1,0 +1,13 @@
+Server/spigot*.jar
+Server/logs
+Server/bundler
+Server/eula.txt
+Server/*.json
+Server/*.yml
+Server/*.properties
+Server/world*
+Server/plugins/PluginMetrics
+Server/plugins/MCOnSNOW
+Spigot/
+TodoList.MD
+ServiceNow/*

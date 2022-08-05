@@ -1,0 +1,5 @@
+main: com.github.mconsnow.App
+name: MCOnSNOW
+version: 0.1
+api-version: 1.18
+authors: [Ryan Chiarelly, Matthew Albright]
