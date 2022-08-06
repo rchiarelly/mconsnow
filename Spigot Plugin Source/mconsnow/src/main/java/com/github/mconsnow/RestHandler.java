@@ -82,6 +82,32 @@ public class RestHandler {
         return new JsonObject();
     }
 
+    public void sendDELETE(String endpoint) {
+        Bukkit.getLogger().info("[RestHandler] DELETE: " + endpoint);
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+        .uri(URI.create(this.instanceURL + this.apiRoot + endpoint))
+        .header("accept", "application/json")
+        .header("Authorization", "Basic " + calcB64(this.instanceUsername + ":" + this.instancePassword))
+        .DELETE()
+        .build();
+        HttpResponse<String> response;
+        try {
+            response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            Bukkit.getLogger().info("[RestHandler] Response Code: " + response.statusCode());
+            if (response.statusCode() != 200) {
+                Bukkit.getLogger().warning("[RestHandler] Invalid Response Code " + response.statusCode() + " received for request " + endpoint);
+                return;
+            }
+            return;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return;
+    }
+
     private String calcB64(String input) {
         return Base64.getEncoder().encodeToString(input.getBytes());
     }

@@ -5,7 +5,6 @@ import java.util.TimerTask;
 import java.util.concurrent.Callable;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import org.bukkit.Bukkit;
@@ -30,17 +29,17 @@ public class CommandHandler {
     }
 
     private void checkTaskQueue() {
-        Bukkit.getLogger().info("Check Queue");
         JsonObject cmdRestObj = restHandler.sendGET("commandQueue");
         Bukkit.getLogger().info(cmdRestObj.get("result").toString());
         Command[] cmdArr = new Gson().fromJson(cmdRestObj.get("result"), Command[].class); 
         for (Command cmd : cmdArr) {
-            Bukkit.getLogger().info(cmd.sys_id);
+            restHandler.sendDELETE("commandQueue/" + cmd.sys_id); 
             Bukkit.getScheduler().callSyncMethod(plugin, new Callable<Boolean>() {
                 @Override
                 public Boolean call() {
-                    return Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.command + " " + cmd.arguments);
-                    //TODO: disable command pickup for this sys_id by updating SNOW with outbound
+                    String command = cmd.command + " " + cmd.arguments;
+                    Bukkit.getLogger().info(command);
+                    return Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
                 }
             });
         }
