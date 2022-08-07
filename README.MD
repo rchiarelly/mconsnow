@@ -1,8 +1,8 @@
 # Minecraft on ServiceNow
 
 ## Integration Details
-Chests are synced to the CMDB showing the World, X/Y/Z Coordinates, and Items in the Chest
-PlayerDeaths are captured as incidents
+Chests are synced to the CMDB showing the World, X/Y/Z Coordinates, and Items in the Chest  
+PlayerDeaths are captured as incidents  
 Minecraft Catalog where requesters can request items, change the weather, set the time of day, and kill players
 
 ## Setup Guide
