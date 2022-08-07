@@ -11,8 +11,8 @@ public class ConfigHandler {
 
     public void RegisterConfigDefaults() {
         this.plugin.getConfig().addDefault("instanceURL", "https://<CHANGEME>.service-now.com/");
-        this.plugin.getConfig().addDefault("instanceUsername", "User");
-        this.plugin.getConfig().addDefault("instancePassword", "Pass");
+        this.plugin.getConfig().addDefault("instanceUsername", "*USERNAME*");
+        this.plugin.getConfig().addDefault("instancePassword", "*PASSWORD*");
         this.plugin.getConfig().addDefault("apiRootPath", "/api/x_176932_minecra_0/minecraftonsnow/");
         this.plugin.getConfig().addDefault("commandHeartbeatSeconds", 30);
         this.plugin.getConfig().options().copyDefaults(true);
