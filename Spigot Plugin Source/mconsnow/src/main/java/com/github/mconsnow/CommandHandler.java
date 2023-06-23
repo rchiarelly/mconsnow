@@ -29,6 +29,7 @@ public class CommandHandler {
     }
 
     private void checkTaskQueue() {
+        try {
         JsonObject cmdRestObj = restHandler.sendGET("commandQueue");
         Bukkit.getLogger().info(cmdRestObj.get("result").toString());
         Command[] cmdArr = new Gson().fromJson(cmdRestObj.get("result"), Command[].class); 
@@ -42,6 +43,10 @@ public class CommandHandler {
                     return Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
                 }
             });
+        }
+        }
+        catch (Exception e) {
+            Bukkit.getLogger().severe("Failed to check the remote task queue!\n" + e.getMessage());
         }
     }
 }
