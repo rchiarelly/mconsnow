@@ -9,3 +9,4 @@ Server/world*
 Server/plugins/PluginMetrics
 Server/plugins/MCOnSNOW
 Spigot/
+.vscode/
