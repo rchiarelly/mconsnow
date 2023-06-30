@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.Gson;
 import java.util.HashMap;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Chest;
 import org.bukkit.block.DoubleChest;
