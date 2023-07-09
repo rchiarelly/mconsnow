@@ -1,7 +1,5 @@
 package com.github.mconsnow;
 
-import javax.swing.JScrollBar;
-
 import com.google.gson.JsonObject;
 
 import org.bukkit.Bukkit;

@@ -13,6 +13,7 @@ public class App extends JavaPlugin {
         this.restHandler = new RestHandler(configHandler);
         getServer().getPluginManager().registerEvents(new DeathListener(this.restHandler), this);
         getServer().getPluginManager().registerEvents(new InventoryCloseListener(this.restHandler), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this.restHandler), this);
         new CommandHandler(this, configHandler, this.restHandler);
 
 
