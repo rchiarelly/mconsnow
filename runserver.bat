@@ -1,2 +1,2 @@
 cd Server
-java -jar spigot-1.19.4.jar nogui
+java -jar spigot-26.2.jar nogui
